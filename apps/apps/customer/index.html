@@ -312,7 +312,33 @@
     </div>
 
   </section>
+<section class="section">
+  <div class="ai-box">
 
+    <h2>🔐 تسجيل الدخول إلى SIPARAI</h2>
+
+    <p>اختر نوع الحساب للمتابعة</p>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:20px;">
+
+      <button class="ai-button" onclick="loginAs('عميل')">
+        👤 دخول العميل
+      </button>
+
+      <button class="ai-button" onclick="loginAs('مطعم')">
+        🍽️ دخول المطعم
+      </button>
+
+      <button class="ai-button" onclick="loginAs('إدارة SIPARAI')">
+        👑 دخول الإدارة
+      </button>
+
+    </div>
+
+    <p id="loginMessage" style="margin-top:20px;"></p>
+
+  </div>
+</section>
   <footer>
     © 2026 SIPARAI — Global AI Restaurant Platform
   </footer>
@@ -402,4 +428,8 @@ function addToCart(name, price) {
   document.getElementById("cartTotal").innerText =
     "المجموع: " + total + " ₺";
 }
-</html>
+function loginAs(type) {
+  document.getElementById("loginMessage").innerText =
+    "تم اختيار: " + type + "\nسيتم تجهيز تسجيل الدخول الحقيقي في المرحلة القادمة.";
+}
+ </html>
