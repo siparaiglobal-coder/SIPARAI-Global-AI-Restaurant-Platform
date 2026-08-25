@@ -339,6 +339,37 @@
 
   </div>
 </section>
+  <section class="section">
+  <div class="ai-box">
+
+    <h2>🍽️ لوحة المطعم</h2>
+
+    <p>إدارة مطعمك من مكان واحد</p>
+
+    <div style="display:grid; gap:12px; margin-top:20px;">
+
+      <button class="ai-button" onclick="restaurantPanel('الطلبات')">
+        📦 الطلبات
+      </button>
+
+      <button class="ai-button" onclick="restaurantPanel('المنيو')">
+        🍔 إدارة المنيو
+      </button>
+
+      <button class="ai-button" onclick="restaurantPanel('موظف AI')">
+        🤖 موظف AI
+      </button>
+
+      <button class="ai-button" onclick="restaurantPanel('بيانات المطعم')">
+        ⚙️ بيانات المطعم
+      </button>
+
+    </div>
+
+    <p id="restaurantMessage" style="margin-top:20px;"></p>
+
+  </div>
+  </section>
   <footer>
     © 2026 SIPARAI — Global AI Restaurant Platform
   </footer>
@@ -431,5 +462,10 @@ function addToCart(name, price) {
 function loginAs(type) {
   document.getElementById("loginMessage").innerText =
     "تم اختيار: " + type + "\nسيتم تجهيز تسجيل الدخول الحقيقي في المرحلة القادمة.";
+}
+function restaurantPanel(section) {
+  document.getElementById("restaurantMessage").innerText =
+    "تم اختيار قسم: " + section +
+    "\nسيتم ربط هذا القسم بقاعدة البيانات في المرحلة القادمة.";
 }
  </html>
