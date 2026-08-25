@@ -248,7 +248,56 @@
 
   </div>
 </section>
-    <div class="ai-box">
+<section class="section">
+  <h2>🍽️ منيو SIPARAI Burger</h2>
+
+  <div class="categories">
+
+    <div class="category">
+      <div>🍔</div>
+      <h3>برغر كلاسيك</h3>
+      <p>برغر لحم مع الجبن والخضار</p>
+      <strong>180 ₺</strong>
+      <br><br>
+      <button onclick="addToCart('برغر كلاسيك', 180)">
+        إضافة إلى الطلب
+      </button>
+    </div>
+
+    <div class="category">
+      <div>🍗</div>
+      <h3>وجبة دجاج</h3>
+      <p>دجاج مقرمش مع البطاطا</p>
+      <strong>220 ₺</strong>
+      <br><br>
+      <button onclick="addToCart('وجبة دجاج', 220)">
+        إضافة إلى الطلب
+      </button>
+    </div>
+
+    <div class="category">
+      <div>🍟</div>
+      <h3>بطاطا</h3>
+      <p>بطاطا مقلية مقرمشة</p>
+      <strong>90 ₺</strong>
+      <br><br>
+      <button onclick="addToCart('بطاطا', 90)">
+        إضافة إلى الطلب
+      </button>
+    </div>
+
+  </div>
+
+  <div class="ai-box">
+    <h2>🛒 طلبك الحالي</h2>
+
+    <p id="cartItems">
+      لا توجد أصناف في الطلب.
+    </p>
+
+    <h3 id="cartTotal">المجموع: 0 ₺</h3>
+  </div>
+</section>    <div class="ai-box">
 
       <h2>🤖 تحدث مع موظف SIPARAI AI</h2>
 
@@ -336,4 +385,21 @@
   );
 }
 </body>
+let cart = [];
+let total = 0;
+
+function addToCart(name, price) {
+  cart.push({
+    name: name,
+    price: price
+  });
+
+  total += price;
+
+  document.getElementById("cartItems").innerText =
+    cart.map(item => item.name + " - " + item.price + " ₺").join("\n");
+
+  document.getElementById("cartTotal").innerText =
+    "المجموع: " + total + " ₺";
+}
 </html>
