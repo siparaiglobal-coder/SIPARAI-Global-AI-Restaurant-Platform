@@ -305,8 +305,8 @@
         دع الذكاء الاصطناعي يساعدك في اختيار المطعم والوجبة المناسبة لك.
       </p>
 
-      <button class="ai-button">
-        تحدث مع AI
+      <button class="ai-button" onclick="startAIChat()">
+  🤖 تحدث مع AI
       </button>
 
     </div>
@@ -401,6 +401,54 @@
       "في المرحلة القادمة سنربطه بالذكاء الاصطناعي الحقيقي."
     );
   });
+  function startAIChat() {
+  const message = prompt(
+    "🤖 SIPARAI AI\n\nاكتب سؤالك عن المنيو أو الأسعار أو الطلب:"
+  );
+
+  if (!message) {
+    return;
+  }
+
+  let response;
+
+  const text = message.toLowerCase();
+
+  if (
+    text.includes("مرحبا") ||
+    text.includes("السلام") ||
+    text.includes("اهلا")
+  ) {
+    response = "مرحبًا بك! 👋 أنا موظف SIPARAI AI. كيف يمكنني مساعدتك؟";
+  } else if (
+    text.includes("منيو") ||
+    text.includes("قائمة") ||
+    text.includes("اكل") ||
+    text.includes("طعام")
+  ) {
+    response =
+      "🍽️ المنيو:\n\n" +
+      "🍔 برغر كلاسيك — 180 ₺\n" +
+      "🍗 وجبة دجاج — 220 ₺\n" +
+      "🍟 بطاطا — 90 ₺";
+  } else if (
+    text.includes("سعر") ||
+    text.includes("كم")
+  ) {
+    response =
+      "💰 الأسعار:\n\n" +
+      "برغر كلاسيك: 180 ₺\n" +
+      "وجبة دجاج: 220 ₺\n" +
+      "بطاطا: 90 ₺";
+  } else {
+    response =
+      "🤖 فهمت سؤالك:\n" +
+      message +
+      "\n\nيمكنني مساعدتك في المنيو والأسعار والطلبات.";
+  }
+
+  alert(response);
+  }
 </script>
 
 </body>
